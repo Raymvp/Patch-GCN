@@ -215,7 +215,7 @@ f.close()
 print("################# Settings ###################")
 for key, val in settings.items():
     print("{}:  {}".format(key, val))        
-
+#这段代码意味着如果这个文件是直接被运行（而非作为模块被其他文件导入），那么就会执行冒号后面的代码。
 if __name__ == "__main__":
     start = timer()
     results = main(args)
