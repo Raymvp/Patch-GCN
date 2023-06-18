@@ -16,7 +16,8 @@ from torch.utils.data import Dataset
 
 from utils.utils import generate_split, nth
 
-
+#这个函数在Mohammed的很多工作都有使用，主要目的是处理存有生存分析数据的csv文件，并将其转化为可以用于模型训练的格式。
+#这里，每个病人的数据被分割成多个滑片（slides），并根据生存时间被标记为不同的类别。
 class Generic_WSI_Survival_Dataset(Dataset):
     def __init__(self,
         csv_path = 'dataset_csv/ccrcc_clean.csv', mode = 'path',
