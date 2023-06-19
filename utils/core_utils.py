@@ -152,7 +152,7 @@ def train(datasets: tuple, cur: int, args: Namespace):
         raise NotImplementedError
     
     if hasattr(model, "relocate"):
-        model.relocate()
+        model.relocate()  #同时支持单GPU或多GPU，实现并行计算。
     else:
         model = model.to(torch.device('cuda'))
     print('Done!')
